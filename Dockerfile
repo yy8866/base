@@ -18,6 +18,7 @@ EXPOSE 22 9001
   
 COPY resources/etc /etc
 COPY resources/entry.sh /entry.sh  
+RUN  chmod +x /entry.sh
 ENTRYPOINT ["/entry.sh"]    
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
   
